@@ -1,0 +1,37 @@
+project: Urban Slum Detection & Infrastructure Planning
+targets:
+  - Lagos
+  - Abuja
+  - Accra
+
+image:
+  tile_size: 256
+  overlap: 32
+  resolution_m: 0.5  # VHR imagery
+  channels: RGB + NIR
+
+model:
+  architecture: CNN_ResNet50
+  n_classes: 3  # formal, informal, industrial
+  batch_size: 32
+  epochs: 50
+  learning_rate: 0.0001
+  test_size: 0.2
+  random_state: 42
+
+class_labels:
+  0: formal_residential
+  1: informal_settlement
+  2: industrial_commercial
+
+infrastructure_priorities:
+  - water_sanitation
+  - road_access
+  - electricity
+  - drainage
+
+output:
+  slum_map: "outputs/slum_detection_map.html"
+  prediction_report: "outputs/slum_report.csv"
+  infrastructure_plan: "outputs/infrastructure_priorities.csv"
+  confusion_matrix: "outputs/confusion_matrix.png"
