@@ -1,50 +1,63 @@
 # Urban Slum Detection & Infrastructure Planning
 
-High-resolution satellite imagery + ML image classification to map informal settlements in Lagos, Abuja, and Accra — helping city planners prioritize water, sanitation, road, and electricity infrastructure investment.
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+High-resolution satellite imagery + ML image classification to map informal settlements in Lagos, Abuja, and Accra — helping city planners prioritise water, sanitation, road, and electricity infrastructure investment.
+
+---
+
+## Problem Statement
+
+70+ million Nigerians live in informal settlements lacking paved roads, piped water, electricity, and sanitation. Without accurate spatial mapping of these settlements, infrastructure budgets are allocated inefficiently. This system automates settlement detection from satellite imagery at scale.
+
+---
 
 ## Features
-- Tile-based classification: Formal / Informal / Industrial
-- Gradient Boosting classifier on texture, spectral, and structural features
-- Informal settlement heatmap (Folium)
-- Infrastructure priority scoring by settlement area
-- Confusion matrix and class distribution charts
 
-## Project Structure
-```
-urban-slum-detection/
-├── src/
-│   ├── data_loader.py     # Tile feature extraction and data generation
-│   ├── model.py           # GBM classifier, prediction, infrastructure prioritization
-│   └── visualize.py       # Maps and charts
-├── data/raw/              # VHR satellite tiles, OSM layers
-├── models/                # Saved classifier
-├── outputs/               # Slum map, reports, charts
-├── config.yaml
-├── main.py
-└── requirements.txt
-```
+| Feature | Description |
+|---------|-------------|
+| Tile Classification | Formal / Informal / Industrial labelling per image tile |
+| Gradient Boosting Model | Texture, spectral, and structural feature classifier |
+| Informal Settlement Heatmap | Folium-based density map across study cities |
+| Infrastructure Gap Scoring | Priority investment ranking by population and gap severity |
+| Multi-City Support | Lagos, Abuja (Nigeria) and Accra (Ghana) |
 
-## Setup
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Remote Sensing | Sentinel-2, Google Earth Engine |
+| Machine Learning | scikit-learn (Gradient Boosting) |
+| Geospatial | GeoPandas, Folium, Rasterio |
+| Data | pandas, NumPy |
+| Visualisation | Matplotlib, Seaborn |
+
+---
+
+## Quick Start
+
 ```bash
-python -m venv venv
-source venv/bin/activate
+git clone https://github.com/Momahmoses/urban-slum-detection.git
+cd urban-slum-detection
 pip install -r requirements.txt
 python main.py
 ```
 
-## Data Sources
-| Layer | Source |
-|-------|--------|
-| Satellite imagery | Maxar / Planet Labs / Sentinel-2 |
-| Urban boundaries | OpenStreetMap / GADM |
-| Population | WorldPop 100m |
-| Road network | OSM via OSMnx |
+---
 
-## Output
-- `outputs/slum_detection_map.html` — interactive informal settlement map
-- `outputs/slum_report.csv` — per-tile classification results
-- `outputs/infrastructure_priorities.csv` — ranked infrastructure needs
-- `outputs/confusion_matrix.png` — model accuracy breakdown
+## Data Sources
+
+- Sentinel-2 Level-2A 10m resolution imagery
+- WorldPop gridded population data
+- OpenStreetMap building footprints
+- UN-Habitat informal settlement boundaries
+
+---
 
 ## Author
-MOMAH MOSES .C.
+
+**Momah Moses** — Geospatial AI Engineer & Data Scientist
+[GitHub](https://github.com/Momahmoses) · [Portfolio](https://momahmoses-ng-gis-portfolio.hf.space)
