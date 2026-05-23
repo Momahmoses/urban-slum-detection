@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-High-resolution satellite imagery + ML image classification to map informal settlements in Lagos, Abuja, and Accra — helping city planners prioritise water, sanitation, road, and electricity infrastructure investment.
+High-resolution satellite imagery + ML image classification to map informal settlements in Lagos, Abuja, and Accra, helping city planners prioritise water, sanitation, road, and electricity infrastructure investment.
 
 ---
 
@@ -59,5 +59,5 @@ python main.py
 
 ## Author
 
-**Momah Moses** — Geospatial AI Engineer & Data Scientist
+**Momah Moses**, Geospatial AI Engineer & Data Scientist
 [GitHub](https://github.com/Momahmoses) · [Portfolio](https://momahmoses-ng-gis-portfolio.hf.space)
